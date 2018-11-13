@@ -1,0 +1,25 @@
+<view class="row username {{isUserNameInputFocus ? 'focus': ''}} {{userName ? 'has-userName-value-wrap': ''}}">
+  <text class="label" hidden="{{!userName}}">用户名</text>
+  <input
+    class="input {{userName ? 'has-userName-value': ''}}"
+    placeholder="请输入用户名"
+    data-type="userName"
+    bindfocus="inputFocusHandle"
+    bindblur="inputBlurHandle"
+    bindinput="bindKeyInput"
+  />
+</view>
+<view class="row password {{isPasswordInputFocus ? 'focus': ''}} {{password ? 'has-password-value-wrap': ''}}">
+  <text class="label" hidden="{{!password}}">密码</text>
+  <input
+    class="input {{password ? 'has-password-value': ''}}"
+    type="text"
+    password
+    placeholder="请输入密码"
+    data-type="password"
+    bindfocus="inputFocusHandle"
+    bindblur="inputBlurHandle"
+    bindinput="bindKeyInput"
+  />
+</view>
+<button class="bind-btn">绑定</button>

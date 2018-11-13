@@ -1,0 +1,12 @@
+page
+  padding 40rpx
+  box-sizing border-box
+.row
+  margin-bottom 40rpx
+  border-bottom 1rpx solid #ccc
+  font-size 28rpx
+  input
+    padding 10rpx 0
+.login-btn
+  color #fff
+  background-color rgb(78, 118, 198)

@@ -1,0 +1,12 @@
+<!--miniprogram/pages/index.wxml-->
+<view class='title'>手机号登录</view>
+
+<view>
+  <input placeholder='请输入手机号'></input>
+</view>
+
+<view>
+  <input placeholder='请输入验证码'></input>
+</view>
+
+<button class='login-btn'>登录</button>

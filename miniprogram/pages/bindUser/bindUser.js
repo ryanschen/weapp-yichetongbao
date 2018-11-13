@@ -1,78 +1,67 @@
 // miniprogram/pages/index.js
 const app = getApp();
-
-const $ = require('../../utils/index.js').default;
-
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    mobile: undefined,
-    code: undefined,
-    isMobileInputFocus: false,
-    isCodeInputFocus: false,
-    codeText: '获取短信验证码',
-    time: 60
+    userName: undefined,
+    password: undefined,
+    isUserNameInputFocus: false,
+    isPasswordInputFocus: false
   },
 
   inputFocusHandle(e) {
-    this.setData(e.currentTarget.dataset.type === 'mobile' ? {
-      isMobileInputFocus: true
+    this.setData(e.currentTarget.dataset.type === 'userName' ? {
+      isUserNameInputFocus: true
     } : {
-      isCodeInputFocus: true
+      isPasswordInputFocus: true
     });
   },
 
   inputBlurHandle(e) {
-    this.setData(e.currentTarget.dataset.type === 'mobile' ? {
-      isMobileInputFocus: false
+    this.setData(e.currentTarget.dataset.type === 'userName' ? {
+      isUserNameInputFocus: false
     } : {
-      isCodeInputFocus: false
+      isPasswordInputFocus: false
     });
   },
 
   bindKeyInput(e) {
-    this.setData(e.currentTarget.dataset.type === 'mobile' ? {
-      mobile: e.detail.value
+    this.setData(e.currentTarget.dataset.type === 'userName' ? {
+      userName: e.detail.value
     } : {
-      code: e.detail.value
+      password: e.detail.value
     });
   },
 
   getCode() {
-    if (!this.data.mobile) {
-      return wx.showToast({
-        title: '请输入手机号',
-        duration: 2600,
-        icon: 'none'
-      });
-    }
-
-    if (!$.isMobile(this.data.mobile)) {
-      return wx.showToast({
-        title: '手机号不正确',
-        duration: 2600,
-        icon: 'none'
-      });
-    }
-
     if (this.data.time !== 60) return;
+    wx.showLoading({
+      title: '加载中...'
+    });
     app.post('/v2/entry/sendCapcode', {
       mobile: this.data.mobile,
-      appCode: 'APP04'
+      appCode: 'APP04' // {
+      //   "appCode": "APP04",
+      //   "deviceId": "string",
+      //   "deviceSystem": "android",
+      //   "mobile": "string",
+      //   "otpCode": "string",
+      //   "password": "string",
+      //   "sessionId": "string",
+      //   "silence": "string",
+      //   "systemCode": "string",
+      //   "userCode": "string",
+      //   "userIp": "string"
+      // }
+
     }).then(response => {
       console.log(response);
-
-      if (response.errCode === 'A0000000') {
-        return wx.showToast({
-          title: '短信发送成功',
-          duration: 2600,
-          icon: 'none'
-        });
-      }
+      wx.hideLoading();
     }).catch(error => {
       console.log(error);
+      wx.hideLoading();
     });
   },
 
@@ -91,15 +80,6 @@ Page({
         clearInterval(this._setInterval);
       }
     }, 1000);
-  },
-
-  loginHandle() {
-    // wx.navigateTo({
-    //   url: '../bindUser/bindUser'
-    // })
-    wx.navigateTo({
-      url: '../accountLogin/accountLogin'
-    });
   },
 
   /**

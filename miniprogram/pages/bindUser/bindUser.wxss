@@ -2,10 +2,6 @@ page{
   padding:40rpx;
   box-sizing:border-box;
 }
-.title{
-  font-size:32rpx;
-  margin-bottom:40rpx;
-}
 .row{
   margin-bottom:20rpx;
   font-size:14px;
@@ -15,7 +11,7 @@ page{
 .row.focus{
   border-bottom-color:#4e76c6;
 }
-.row.has-code-value-wrap,.row.has-mobile-value-wrap{
+.row.has-password-value-wrap,.row.has-userName-value-wrap{
   padding-top:20rpx;
 }
 .row .label{
@@ -24,7 +20,7 @@ page{
   top:0;
   left:0;
 }
-.row.code{
+.row.password{
   margin-bottom:60rpx;
   position:relative;
   padding-right:126px;
@@ -32,10 +28,10 @@ page{
 .row .input{
   padding:50rpx 0 30rpx;
 }
-.row .input.has-code-value,.row .input.has-mobile-value{
+.row .input.has-password-value,.row .input.has-userName-value{
   padding:50rpx 0 10rpx;
 }
-.row .code-input{
+.row .password-input{
   position:absolute;
   right:0;
   bottom:0;
@@ -47,7 +43,7 @@ page{
   justify-content:flex-end;
   width:126px;
 }
-.login-btn{
+.bind-btn{
   color:#fff;
   background-color:#4e76c6;
 }

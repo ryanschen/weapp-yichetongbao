@@ -1,0 +1,45 @@
+page
+  padding 40rpx
+  box-sizing border-box
+
+.title
+  font-size 32rpx
+  margin-bottom 40rpx
+
+.row
+  margin-bottom 20rpx
+  font-size 14px
+  position relative
+  border-bottom 1rpx solid #ccc
+  &.focus
+    border-bottom-color rgb(78, 118, 198)
+  &.has-mobile-value-wrap,&.has-code-value-wrap
+    padding-top 20rpx
+  .label
+    color rgb(78, 118, 198)
+    position absolute
+    top 0
+    left 0
+  &.code
+    margin-bottom 60rpx
+    position relative
+    padding-right 126px
+  .input
+    padding 50rpx 0 30rpx 0
+    &.has-mobile-value,&.has-code-value
+      padding 50rpx 0 10rpx 0
+  .code-input
+    position absolute
+    right 0
+    bottom 0
+    border 0
+    color  rgb(78, 118, 198)
+    height 100%
+    display flex
+    align-items center
+    justify-content flex-end
+    width 126px
+
+.login-btn
+  color #fff
+  background-color rgb(78, 118, 198)

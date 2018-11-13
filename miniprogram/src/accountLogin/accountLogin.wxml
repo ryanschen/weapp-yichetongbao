@@ -1,0 +1,15 @@
+<view class="row">
+  <input
+    data-type="userName"
+    placeholder="用户名"
+    bindinput="bindKeyInput"
+  />
+</view>
+<view class="row">
+  <input
+    data-type="password"
+    placeholder="密码"
+    bindinput="bindKeyInput"
+  />
+</view>
+<button class="login-btn" bindtap="loginHandle">登录</button>

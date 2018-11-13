@@ -1,0 +1,16 @@
+page{
+  padding:40rpx;
+  box-sizing:border-box;
+}
+.row{
+  margin-bottom:40rpx;
+  border-bottom:1rpx solid #ccc;
+  font-size:28rpx;
+}
+.row input{
+  padding:10rpx 0;
+}
+.login-btn{
+  color:#fff;
+  background-color:#4e76c6;
+}
