@@ -5,9 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    active: 0,
+    carNum: '',
+    isSuccessTipChecked: true
   },
 
+  onChange(event) {
+    // wx.showToast({
+    //   title: `切换到标签 ${event.detail.index + 1}`,
+    //   icon: 'none'
+    // });
+  },
+
+  onCarNumChange(event) {
+    // event.detail 为当前输入的值
+    console.log(event.detail);
+  },
+
+  onSuccessTipChange (event) {
+    console.log(event.detail);
+    this.setData({
+      isSuccessTipChecked: event.detail
+    });
+  },
+
+  submitHandle () {
+    console.log('submit');
+  },
   /**
    * 生命周期函数--监听页面加载
    */

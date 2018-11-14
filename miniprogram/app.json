@@ -4,13 +4,43 @@
     "pages/index/index",
     "pages/bindUser/bindUser",
     "pages/accountLogin/accountLogin",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/my/my",
+    "pages/selectPolicy/selectPolicy",
+    "pages/quoteList/quoteList",
+    "pages/quoteDetail/quoteDetail",
+    "src/supplementInfo/supplementInfo",
+    "src/vehicleInfo/vehicleInfo"
   ],
+  "usingComponents": {
+    "van-button": "./components/button/index",
+    "van-tab": "./components/tab/index",
+    "van-tabs": "./components/tabs/index",
+    "van-field": "./components/field/index",
+    "van-checkbox": "./components/checkbox/index",
+    "van-checkbox-group": "./components/checkbox-group/index"
+  },
   "window": {
     "backgroundColor": "#FFF",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFF",
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#4e76c6",
+    "backgroundColor": "#fff",
+    "borderStyle": "#e5e5e5",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "续保"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
   }
 }

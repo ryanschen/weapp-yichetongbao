@@ -1,1 +1,83 @@
-/* miniprogram/src/home/home.wxss */
+@import '../../style/common/var'
+page {
+  font-size 28rpx
+  background-color #f6f6f6
+}
+.quote-list-btn
+  color $themeColor
+.top-wrap
+  background-color $themeColor
+  color #fff
+  display flex
+  padding 60rpx 0 100rpx
+  font-size: 28rpx
+  .num
+    font-size 48rpx
+  .top-left
+    flex 1
+    text-align center
+  .top-right
+    flex 1
+    text-align center
+
+.middle-wrap
+  padding 20rpx
+  box-sizing border-box
+  margin-top -80rpx
+  .middle
+    border-radius 20rpx
+    background-color #fff
+    .top
+      display flex
+      align-items center
+      justify-content space-between
+      padding 20rpx
+      box-sizing border-box
+.submit-btn-wrap
+  padding 40rpx
+  text-align center
+.submit-btn
+  border 1rpx solid $themeColor
+  color $themeColor
+  border-radius 40px
+  background-color #fff
+.success-tip-checked-wrap
+  position absolute
+  right 0
+  top 50rpx
+  transform scale(.8)
+  color #b1b1b1
+
+.list-wrap
+  background-color #ffffff
+  .title
+    padding 20rpx
+  .row
+    padding 20rpx 20rpx 20rpx 0
+    box-sizing border-box
+    margin-left 20rpx
+    &-top
+      font-size 30rpx
+      display flex
+      align-items center
+      justify-content space-between
+      .state
+        color red
+        font-size 18rpx
+        border 1rpx solid red
+        padding 0 8rpx
+        margin-left 10rpx
+        border-radius 6rpx
+    .time
+      font-size 24rpx
+      color #b1b1b1
+    .day-num
+      color red
+    &-middle
+      font-size 24rpx
+      color #b1b1b1
+      line-height 2
+    &-bottom
+      .name
+        font-size 24rpx
+        color #b1b1b1

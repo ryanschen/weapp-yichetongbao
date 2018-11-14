@@ -2,6 +2,7 @@ const path = require('path');
 const postcss = require('gulp-postcss');
 const gulp = require('gulp');
 const stylus = require('gulp-stylus');
+const nib = require('nib')();
 const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 const cssnano = require('cssnano');
@@ -17,7 +18,11 @@ function copy(ext) {
 gulp.task('compile-stylus', () => {
   return gulp
     .src([src + '/**/*.stylus'])
-    .pipe(stylus())
+    .pipe(stylus(
+      {
+        use: nib
+      }
+    ))
     .pipe(postcss([
       cssnano({
         preset: ['default', {

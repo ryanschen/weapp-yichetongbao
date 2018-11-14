@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -40,7 +40,25 @@
 				{
 					"id": -1,
 					"name": "accountLogin",
-					"pathName": "pages/accountLogin/accountLogin"
+					"pathName": "pages/accountLogin/accountLogin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/home/home",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "selectPolicy",
+					"pathName": "pages/selectPolicy/selectPolicy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "quoteList",
+					"pathName": "pages/quoteList/quoteList"
 				}
 			]
 		}

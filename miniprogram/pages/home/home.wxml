@@ -1,2 +1,71 @@
-<!--miniprogram/src/home/home.wxml-->
-<text>miniprogram/src/home/home.wxml</text>
+<view class="top-wrap">
+  <view class="top-left van-hairline--right">
+    <view><text class="num">10</text>辆</view>
+    <view>进店提醒</view>
+  </view>
+  <view class="top-right">
+    <view><text class="num">20</text>辆</view>
+    <view>当日续保</view>
+  </view>
+</view>
+
+<view class="middle-wrap">
+  <view class="middle">
+    <view class="top van-hairline--bottom">
+      <text>快捷报价</text>
+      <text class="quote-list-btn">报价记录</text>
+    </view>
+    <view>
+      <van-tabs
+        active="{{ active }}"
+        bind:change="onChange"
+        color="#4e76c6"
+        line-width="24"
+      >
+        <van-tab title="车牌号">
+          <van-field
+            label="车牌号"
+            value="{{ carNum }}"
+            placeholder="请输入车牌号"
+            border="{{ false }}"
+            bind:change="onCarNumChange"
+          />
+          <view class="van-hairline--top submit-btn-wrap">
+            <button size="mini" class="submit-btn" bindtap="submitHandle">提交报价</button>
+            <van-checkbox
+              value="{{ isSuccessTipChecked }}"
+              bind:change="onSuccessTipChange"
+              class="success-tip-checked-wrap"
+            >报价成功提醒</van-checkbox>
+          </view>
+        </van-tab>
+        <van-tab title="车架号">内容 2</van-tab>
+      </van-tabs>
+    </view>
+  </view>
+</view>
+
+<view class="list-wrap">
+  <view class="title van-hairline--bottom">进店客户</view>
+  <view class="row van-hairline--bottom">
+    <view class="row-top">
+      <text class="car-num">沪HY8888<text class="state">未分配</text></text>
+      <text class="time">08:20</text>
+    </view>
+    <view class="row-middle">
+      <text>保险到期日期剩余：<text class="day-num">40</text>天 <text>请尽快分配</text></text>
+    </view>
+    <view class="row-bottom">
+      <text class="name">王伟伟</text><text class="name">邱鹏</text>
+    </view>
+  </view>
+  <view class="row van-hairline--bottom">
+    <view class="row-top">
+      <text class="car-num">沪A76J75<text class="state">未分配</text></text>
+      <text class="time">08:20</text>
+    </view>
+    <view class="row-middle">
+      <text>保险到期日期剩余：<text class="day-num">40</text>天 <text>请尽快分配</text></text>
+    </view>
+  </view>
+</view>

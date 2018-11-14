@@ -1,0 +1,52 @@
+@import '../../style/common/var'
+
+page
+  background-color rgb(245, 245, 245)
+  font-size 28rpx
+.row
+  display flex
+  background-color #fff
+  .logo-wrap
+    width 140rpx
+    padding 20rpx 0
+    display flex
+    align-items center
+    justify-content center
+  .logo
+    width 70rpx
+    height 70rpx
+  .content-wrap
+    flex 1
+    display flex
+    justify-content space-between
+    align-items center
+    padding 40rpx 0
+    .tip
+      font-size 20rpx
+      color $themeColor
+      background-color #eee
+      padding 2rpx 8rpx
+      border-radius 8rpx
+      margin-left 20rpx
+    .btn
+      position absolute
+      right 40rpx
+      color $themeColor
+      background-color #fff
+    .amount
+      color $themeColor
+      margin-right 80rpx
+      position relative
+      &::after
+        content ''
+        border-top 1px solid #ccc
+        border-right 1px solid #ccc
+        border-bottom 1px solid #fff
+        border-left 1px solid #fff
+        width 20rpx
+        height 20rpx
+        display inline-block
+        transform rotate(45deg)
+        position absolute
+        right -28rpx
+        top 10rpx
