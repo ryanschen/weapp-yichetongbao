@@ -1,5 +1,6 @@
 /**app.wxss**/
-@import "./components/common/index.wxss";
+@import "./vant/common/index.wxss";
+@import './assets/style/iconfont/iconfont.wxss';
 .container {
   display: flex;
   flex-direction: column;

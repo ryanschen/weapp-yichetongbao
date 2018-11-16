@@ -1,4 +1,4 @@
-@import '../../style/common/var'
+@import '../../assets/style/common/var'
 page {
   font-size 28rpx
   background-color #f6f6f6

@@ -1,0 +1,26 @@
+<view class="title van-hairline--top">车辆信息</view>
+<view class="car-info-wrap van-hairline--top">
+  <van-field label="车牌号" placeholder="请输入车牌号" />
+  <van-field label="车架号" placeholder="请输入车架号" />
+  <van-field label="发动机号" placeholder="请输入发动机号" />
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <van-field label="注册日期" placeholder="请选择注册日期" icon="arrow" readonly value="{{ date }}"/>
+  </picker>
+  <view class="error-tip">
+    <text class="sq-icon sq-icon-alert-full error-tip-icon"></text>
+    报价失败，请补充以下信息，重新报价
+  </view>
+  <van-field label="品牌型号" placeholder="请选择注品牌型号" icon="arrow" readonly />
+  <van-field label="交强险" placeholder="请选择日期" icon="arrow" readonly />
+  <van-field label="商业险" placeholder="请选择日期" icon="arrow" readonly />
+</view>
+
+<view class="part-wrap title van-hairline--top">车主信息</view>
+<view class="van-hairline--top">
+  <van-field label="车主姓名" placeholder="请输入车主姓名" />
+  <van-field label="身份证" placeholder="请输入身份证" />
+</view>
+
+<view class="submit-btn-wrap">
+  <button plain class="submit-btn">提交报价</button>
+</view>

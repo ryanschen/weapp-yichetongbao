@@ -1,6 +1,6 @@
 <view class="row van-hairline--top">
   <view class="logo-wrap">
-    <image class="logo" src="../../images/logo.jpg"></image>
+    <image class="logo" src="../../assets/images/logo.jpg"></image>
   </view>
   <view class="content-wrap van-hairline--bottom">
     <view>人保财险<text class="tip">去年投保</text></view>
@@ -9,7 +9,7 @@
 </view>
 <view class="row">
   <view class="logo-wrap">
-    <image class="logo" src="../../images/logo.jpg"></image>
+    <image class="logo" src="../../assets/images/logo.jpg"></image>
   </view>
   <view class="content-wrap van-hairline--bottom">
     <view>人保财险<text class="tip">去年投保</text></view>
@@ -18,7 +18,7 @@
 </view>
 <view class="row">
   <view class="logo-wrap">
-    <image class="logo" src="../../images/logo.jpg"></image>
+    <image class="logo" src="../../assets/images/logo.jpg"></image>
   </view>
   <view class="content-wrap van-hairline--bottom">
     <view>人保财险<text class="tip">去年投保</text></view>

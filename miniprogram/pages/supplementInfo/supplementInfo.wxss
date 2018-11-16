@@ -1,0 +1,37 @@
+page{
+  background-color:#f6f6f6;
+}
+.title{
+  font-size:30rpx;
+  padding:20rpx 0 20rpx 60rpx;
+  background-color:#fff;
+}
+.part-wrap{
+  margin-top:20rpx;
+}
+.submit-btn{
+  background-color:#4e76c6 !important;
+  color:#fff !important;
+  border:0 !important;
+}
+.submit-btn.disabled{
+  background-color:#ddd;
+  border:0;
+  color:#fff;
+}
+.submit-btn-wrap{
+  padding:40rpx;
+}
+.error-tip{
+  color:#e5371f;
+  background-color:#fde5e1;
+  font-size:24rpx;
+  padding:10rpx 10rpx 10rpx 30rpx;
+}
+.error-tip-icon{
+  font-size:26rpx;
+  color:#e5371f;
+}
+.picker{
+  width:100px;
+}

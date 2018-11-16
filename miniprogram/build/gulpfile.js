@@ -7,7 +7,7 @@ const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 const cssnano = require('cssnano');
 
-const src = path.join(__dirname, '../src');
+const src = path.join(__dirname, '../views');
 const dist = path.join(__dirname, '../pages');
 const ext = ['js', 'stylus', 'json', 'wxml'];
 

@@ -9,16 +9,17 @@
     "pages/selectPolicy/selectPolicy",
     "pages/quoteList/quoteList",
     "pages/quoteDetail/quoteDetail",
-    "src/supplementInfo/supplementInfo",
-    "src/vehicleInfo/vehicleInfo"
+    "pages/supplementInfo/supplementInfo",
+    "pages/vehicleInfo/vehicleInfo"
   ],
   "usingComponents": {
-    "van-button": "./components/button/index",
-    "van-tab": "./components/tab/index",
-    "van-tabs": "./components/tabs/index",
-    "van-field": "./components/field/index",
-    "van-checkbox": "./components/checkbox/index",
-    "van-checkbox-group": "./components/checkbox-group/index"
+    "van-button": "./vant/button/index",
+    "van-tab": "./vant/tab/index",
+    "van-tabs": "./vant/tabs/index",
+    "van-field": "./vant/field/index",
+    "van-checkbox": "./vant/checkbox/index",
+    "van-checkbox-group": "./vant/checkbox-group/index",
+    "van-datetime-picker": "./vant/datetime-picker/index"
   },
   "window": {
     "backgroundColor": "#FFF",
