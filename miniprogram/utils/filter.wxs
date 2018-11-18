@@ -1,0 +1,16 @@
+function zoo(str) {
+  if (str < 10) {
+    return '0' + str
+  } else {
+    return str
+  }
+}
+function formatDate(datetime) {
+  if (!datetime) return
+  var date = getDate(datetime)
+  return date.getFullYear() + '-' + zoo(date.getMonth() + 1) + '-' + zoo(date.getDate())
+}
+
+module.exports = {
+  formatDate: formatDate
+}

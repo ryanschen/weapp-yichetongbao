@@ -19,7 +19,10 @@
     "van-field": "./vant/field/index",
     "van-checkbox": "./vant/checkbox/index",
     "van-checkbox-group": "./vant/checkbox-group/index",
-    "van-datetime-picker": "./vant/datetime-picker/index"
+    "van-datetime-picker": "./vant/datetime-picker/index",
+    "van-popup": "./vant/popup/index",
+    "van-cell": "./vant/cell/index",
+    "van-cell-group": "./vant/cell-group/index"
   },
   "window": {
     "backgroundColor": "#FFF",

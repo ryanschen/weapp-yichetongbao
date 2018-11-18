@@ -1,2 +1,51 @@
-<!--miniprogram/src/vehicleInfo/vehicleInfo.wxml-->
-<text>miniprogram/src/vehicleInfo/vehicleInfo.wxml</text>
+<view class="top-wrap">
+  <view class="row-top"><text class="car-num">沪HY8888</text><text class="tip">战歌：理赔服务感受差</text></view>
+  <view class="row-bottom"><text class="day">保险到期日期剩余：<text class="num">22</text>天</text><text class="time">进店时间：08:20</text></view>
+</view>
+
+<view class="part-wrap">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <van-field label="续保专员" readonly icon="arrow" value="{{array[index]}}" />
+  </picker>
+</view>
+
+<view class="part-wrap title van-hairline--top">车辆信息</view>
+<view class="car-info-wrap van-hairline--top">
+  <van-field label="交强险起期" readonly value="2018-11-16" />
+  <van-field label="商业险起期" readonly value="2018-11-1" />
+  <van-field label="车架号" readonly value="SDFSFSFSFSFSF"/>
+  <van-field label="发动机号" readonly value="2wdfwf"/>
+  <van-field label="车主姓名" readonly value="王文文"/>
+</view>
+
+<view class="part-wrap title">报价历史<text class="title-tip">(仅显示当日报价记录)</text></view>
+<view class="quote-list-wrap van-hairline--top">
+  <view>
+    <view class="loadmore">↓</view>
+    <view class="row van-hairline--bottom">
+      <view class="logo-wrap">
+        <image class="logo" src="../../assets/images/logo.jpg"></image>
+      </view>
+      <view class="content-wrap">
+        <view class="content">11:55</view>
+        <view class="amount">¥5320.00</view>
+      </view>
+    </view>
+    <view class="row van-hairline--bottom">
+      <view class="logo-wrap">
+        <image class="logo" src="../../assets/images/logo.jpg"></image>
+      </view>
+      <view class="content-wrap">
+        <view class="content">11:55</view>
+        <view class="amount">¥5320.00</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="empty-tip">
+    暂无报价信息
+  </view> -->
+</view>
+
+<view class="submit-btn-wrap">
+  <button plain class="submit-btn" bindtap="submitHandle">提交报价</button>
+</view>
