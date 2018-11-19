@@ -1,12 +1,9 @@
-// miniprogram/pages/index.js
+import CreatePage from '../../utils/createPage';
 const app = getApp();
 
 const $ = require('../../utils/index.js').default;
 
-Page({
-  /**
-   * 页面的初始数据
-   */
+CreatePage({
   data: {
     mobile: undefined,
     code: undefined,
@@ -15,91 +12,93 @@ Page({
     codeText: '获取短信验证码',
     time: 60
   },
-
-  inputFocusHandle(e) {
-    this.setData(e.currentTarget.dataset.type === 'mobile' ? {
-      isMobileInputFocus: true
-    } : {
-      isCodeInputFocus: true
-    });
-  },
-
-  inputBlurHandle(e) {
-    this.setData(e.currentTarget.dataset.type === 'mobile' ? {
-      isMobileInputFocus: false
-    } : {
-      isCodeInputFocus: false
-    });
-  },
-
-  bindKeyInput(e) {
-    this.setData(e.currentTarget.dataset.type === 'mobile' ? {
-      mobile: e.detail.value
-    } : {
-      code: e.detail.value
-    });
-  },
-
-  getCode() {
-    if (!this.data.mobile) {
-      return wx.showToast({
-        title: '请输入手机号',
-        duration: 2600,
-        icon: 'none'
+  methods: {
+    inputFocusHandle(e) {
+      this.setData(e.currentTarget.dataset.type === 'mobile' ? {
+        isMobileInputFocus: true
+      } : {
+        isCodeInputFocus: true
       });
-    }
+    },
 
-    if (!$.isMobile(this.data.mobile)) {
-      return wx.showToast({
-        title: '手机号不正确',
-        duration: 2600,
-        icon: 'none'
+    inputBlurHandle(e) {
+      this.setData(e.currentTarget.dataset.type === 'mobile' ? {
+        isMobileInputFocus: false
+      } : {
+        isCodeInputFocus: false
       });
-    }
+    },
 
-    if (this.data.time !== 60) return;
-    app.post('/v2/entry/sendCapcode', {
-      mobile: this.data.mobile,
-      appCode: 'APP04'
-    }).then(response => {
-      console.log(response);
+    bindKeyInput(e) {
+      this.setData(e.currentTarget.dataset.type === 'mobile' ? {
+        mobile: e.detail.value
+      } : {
+        code: e.detail.value
+      });
+    },
 
-      if (response.errCode === 'A0000000') {
+    getCode() {
+      if (!this.data.mobile) {
         return wx.showToast({
-          title: '短信发送成功',
+          title: '请输入手机号',
           duration: 2600,
           icon: 'none'
         });
       }
-    }).catch(error => {
-      console.log(error);
-    });
-  },
 
-  timeInterval() {
-    this._setInterval = setInterval(() => {
-      if (this.data.time - 1 > 0) {
-        this.setData({
-          codeText: `${this.data.time - 1}s`,
-          time: this.data.time - 1
+      if (!$.isMobile(this.data.mobile)) {
+        return wx.showToast({
+          title: '手机号不正确',
+          duration: 2600,
+          icon: 'none'
         });
-      } else {
-        this.setData({
-          codeText: `获取短信验证码`,
-          time: 60
-        });
-        clearInterval(this._setInterval);
       }
-    }, 1000);
-  },
 
-  loginHandle() {
-    // wx.navigateTo({
-    //   url: '../bindUser/bindUser'
-    // })
-    wx.navigateTo({
-      url: '../accountLogin/accountLogin'
-    });
+      if (this.data.time !== 60) return;
+      app.post('/v2/entry/sendCapcode', {
+        mobile: this.data.mobile,
+        appCode: 'APP04'
+      }).then(response => {
+        console.log(response);
+
+        if (response.errCode === 'A0000000') {
+          return wx.showToast({
+            title: '短信发送成功',
+            duration: 2600,
+            icon: 'none'
+          });
+        }
+      }).catch(error => {
+        console.log(error);
+      });
+    },
+
+    timeInterval() {
+      this._setInterval = setInterval(() => {
+        if (this.data.time - 1 > 0) {
+          this.setData({
+            codeText: `${this.data.time - 1}s`,
+            time: this.data.time - 1
+          });
+        } else {
+          this.setData({
+            codeText: `获取短信验证码`,
+            time: 60
+          });
+          clearInterval(this._setInterval);
+        }
+      }, 1000);
+    },
+
+    loginHandle() {
+      // wx.navigateTo({
+      //   url: '../bindUser/bindUser'
+      // })
+      wx.navigateTo({
+        url: '../accountLogin/accountLogin'
+      });
+    }
+
   },
 
   /**

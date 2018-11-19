@@ -1,0 +1,89 @@
+@import '../../assets/style/common/var'
+Page
+  padding-bottom 100px
+.title-wrap
+  display flex
+  justify-content space-between
+  align-items center
+  padding 40rpx
+  background-color #fff
+  mix-1px(1)
+  .title-text
+    display flex
+    align-items center
+    .logo
+      width 50rpx
+      height 50rpx
+    .text
+      margin-left 20rpx
+  .amount
+    color $themeColor
+.insure-type-title
+  display flex
+  justify-content space-between
+  align-items center
+  padding 8rpx 28rpx
+  border-left 2px solid $themeColor
+  background-color rgb(245, 245, 245)
+.switch-wrap
+  display flex
+  align-items center
+.diy-switch
+  margin-top 10rpx
+.coverage-list
+  background-color #fff
+  padding 0 28rpx 28rpx
+  &.pdb-0
+    padding-bottom 0
+    .coverage-row
+      border 0
+  .coverage-row
+    display flex
+    justify-content space-between
+    align-items center
+    font-size 26rpx
+    border-bottom 1px dashed #eee
+    padding 16rpx 0
+    .coverage-name
+      color #b1b1b1
+    .exemptclaus-tag
+      color $themeColor
+      background-color #eee
+      border-radius 8px
+      font-size 20rpx
+      padding 0 4px
+    .coverage-amount
+      width 48%
+      color #b1b1b1
+      display flex
+      align-items center
+      justify-content space-between
+      &.right
+        justify-content flex-end
+    .coverage-value
+      background-color $themeColor
+      color #fff
+      font-size 24rpx
+      padding 2px 6px
+      border-radius 4px
+      &.disabled
+        background-color #dddddd
+    .coverage-arrow
+      font-size 20rpx
+      margin-left 4px
+.submit-btn
+  background-color $themeColor !important
+  border-color $themeColor !important
+  color #fff !important
+  height 44px !important
+  line-height 44px !important
+  font-size 15px !important
+  &-wrap
+    padding 40rpx
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    box-sizing border-box
+.time-icon
+  margin-left 20rpx

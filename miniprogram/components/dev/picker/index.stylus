@@ -1,0 +1,18 @@
+@import '../../../assets/style/common/var'
+@import '../../stylus/mixins'
+
+.sq-picker
+  font-size 14px
+  &-title-wrap
+    display flex
+    text-align center
+    mix-1px(1, 0, 1, 0)
+    font-size 14px
+    line-height 44px
+    height 44px
+  &-title-text
+    flex 1
+  &-cancel-btn,&-confirm-btn
+    color $themeColor
+    padding 0 15px
+  

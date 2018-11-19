@@ -1,8 +1,5 @@
-// miniprogram/src/puoteList/quoteList.js
-Page({
-  /**
-   * 页面的初始数据
-   */
+import CreatePage from '../../utils/createPage';
+CreatePage({
   data: {},
 
   /**

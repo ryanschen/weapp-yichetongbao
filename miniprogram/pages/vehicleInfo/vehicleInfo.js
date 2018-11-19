@@ -1,12 +1,10 @@
+import CreatePage from '../../utils/createPage';
 const currentTime = new Date();
 const currentYear = currentTime.getFullYear();
 const currentMonth = currentTime.getMonth();
 const currentDate = currentTime.getDate();
 const nextDate = new Date(currentYear, currentMonth, currentDate + 1);
-Page({
-  /**
-   * 页面的初始数据
-   */
+CreatePage({
   data: {
     array: ['美国', '中国', '巴西', '日本'],
     index: 0,
@@ -19,45 +17,47 @@ Page({
     isShowDatePicker: false,
     showWitchDatePicker: ''
   },
+  methods: {
+    bindPickerChange(e) {
+      this.setData({
+        index: e.detail.value
+      });
+    },
 
-  bindPickerChange(e) {
-    this.setData({
-      index: e.detail.value
-    });
-  },
+    onDateConfirm(value) {
+      this.setData({
+        [this.data.showWitchDatePicker]: value.detail,
+        isShowDatePicker: false
+      });
+    },
 
-  onDateConfirm(value) {
-    this.setData({
-      [this.data.showWitchDatePicker]: value.detail,
-      isShowDatePicker: false
-    });
-  },
+    onDateCancel() {
+      this.setData({
+        isShowDatePicker: false
+      });
+    },
 
-  onDateCancel() {
-    this.setData({
-      isShowDatePicker: false
-    });
-  },
+    showDatePicker(e) {
+      console.log({
+        showWitchDatePicker: e.target.dataset.type,
+        date: this.data[e.target.dataset.type],
+        isShowDatePicker: true
+      });
+      this.setData({
+        showWitchDatePicker: e.target.dataset.type,
+        date: this.data[e.target.dataset.type],
+        isShowDatePicker: true
+      });
+    },
 
-  showDatePicker(e) {
-    console.log({
-      showWitchDatePicker: e.target.dataset.type,
-      date: this.data[e.target.dataset.type],
-      isShowDatePicker: true
-    });
-    this.setData({
-      showWitchDatePicker: e.target.dataset.type,
-      date: this.data[e.target.dataset.type],
-      isShowDatePicker: true
-    });
-  },
+    submitHandle() {
+      console.log(13233);
+      this.setData({
+        minDate: new Date(2019, 3, 1).getTime(),
+        date1: new Date(2019, 3, 2).getTime()
+      });
+    }
 
-  submitHandle() {
-    console.log(13233);
-    this.setData({
-      minDate: new Date(2019, 3, 1).getTime(),
-      date1: new Date(2019, 3, 2).getTime()
-    });
   },
 
   /**

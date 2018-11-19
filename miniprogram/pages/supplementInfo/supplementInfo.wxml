@@ -33,7 +33,7 @@
 
 <view class="part-wrap title van-hairline--top">车主信息</view>
 <view class="van-hairline--top">
-  <van-field label="车主姓名" placeholder="请输入车主姓名" />
+  <van-field label="车主姓名" placeholder="请输入车主姓名" value="{{name}}" bind:input="fieldInput" data-key="name"/>
   <van-field label="身份证" placeholder="请输入身份证" type="idcard" />
 </view>
 

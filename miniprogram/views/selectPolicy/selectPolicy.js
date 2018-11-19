@@ -1,9 +1,6 @@
-// miniprogram/src/selectPolicy/selectPolicy.js
-Page({
+import CreatePage from '../../utils/createPage'
 
-  /**
-   * 页面的初始数据
-   */
+CreatePage({
   data: {
 
   },

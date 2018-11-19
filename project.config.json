@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -76,7 +76,19 @@
 				{
 					"id": -1,
 					"name": "quoteDetail",
-					"pathName": "pages/quoteDetail/quoteDetail"
+					"pathName": "pages/quoteDetail/quoteDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "insureConfirm",
+					"pathName": "pages/insureConfirm/insureConfirm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "planEdit",
+					"pathName": "pages/planEdit/planEdit"
 				}
 			]
 		}

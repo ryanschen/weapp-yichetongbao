@@ -1,0 +1,123 @@
+Page{
+  padding-bottom:100px;
+}
+.title-wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:40rpx;
+  background-color:#fff;
+  position:relative;
+}
+.title-wrap:after{
+  content:" ";
+  position:absolute;
+  pointer-events:none;
+  box-sizing:border-box;
+  transform-origin:center;
+  top:-50%;
+  left:-50%;
+  right:-50%;
+  bottom:-50%;
+  transform:scale(.5);
+  border:solid #eee;
+  border-width:1px 0 0;
+}
+.title-wrap .title-text{
+  display:flex;
+  align-items:center;
+}
+.title-wrap .title-text .logo{
+  width:50rpx;
+  height:50rpx;
+}
+.title-wrap .title-text .text{
+  margin-left:20rpx;
+}
+.title-wrap .amount{
+  color:#4e76c6;
+}
+.insure-type-title{
+  justify-content:space-between;
+  padding:8rpx 28rpx;
+  border-left:2px solid #4e76c6;
+  background-color:#f5f5f5;
+}
+.insure-type-title,.switch-wrap{
+  display:flex;
+  align-items:center;
+}
+.diy-switch{
+  margin-top:10rpx;
+}
+.coverage-list{
+  background-color:#fff;
+  padding:0 28rpx 28rpx;
+}
+.coverage-list.pdb-0{
+  padding-bottom:0;
+}
+.coverage-list.pdb-0 .coverage-row{
+  border:0;
+}
+.coverage-list .coverage-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:26rpx;
+  border-bottom:1px dashed #eee;
+  padding:16rpx 0;
+}
+.coverage-list .coverage-row .coverage-name{
+  color:#b1b1b1;
+}
+.coverage-list .coverage-row .exemptclaus-tag{
+  color:#4e76c6;
+  background-color:#eee;
+  border-radius:8px;
+  font-size:20rpx;
+  padding:0 4px;
+}
+.coverage-list .coverage-row .coverage-amount{
+  width:48%;
+  color:#b1b1b1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.coverage-list .coverage-row .coverage-amount.right{
+  justify-content:flex-end;
+}
+.coverage-list .coverage-row .coverage-value{
+  background-color:#4e76c6;
+  color:#fff;
+  font-size:24rpx;
+  padding:2px 6px;
+  border-radius:4px;
+}
+.coverage-list .coverage-row .coverage-value.disabled{
+  background-color:#ddd;
+}
+.coverage-list .coverage-row .coverage-arrow{
+  font-size:20rpx;
+  margin-left:4px;
+}
+.submit-btn{
+  background-color:#4e76c6 !important;
+  border-color:#4e76c6 !important;
+  color:#fff !important;
+  height:44px !important;
+  line-height:44px !important;
+  font-size:15px !important;
+}
+.submit-btn-wrap{
+  padding:40rpx;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  box-sizing:border-box;
+}
+.time-icon{
+  margin-left:20rpx;
+}

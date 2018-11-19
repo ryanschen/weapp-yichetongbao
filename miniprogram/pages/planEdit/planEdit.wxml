@@ -1,0 +1,69 @@
+<view class="title-wrap">
+  <view class="title-text">
+    <image src="../../assets/images/logo.jpg" class="logo"></image>
+    <text class="text">人保财险</text>
+  </view>
+  <view class="amount"></view>
+</view>
+
+<view class="insure-type-title">
+  <view>商业险</view>
+  <view class="switch-wrap">
+    <van-switch
+      custom-class="diy-switch"
+      checked="{{ checked }}"
+      bind:change="onChange"
+      size="18px"
+      active-color="#4e76c6"
+    />
+  </view>
+</view>
+
+<view class="coverage-list">
+  <view class="coverage-row">
+    <view><text class="coverage-name">商业险起期</text></view>
+    <view class="coverage-amount right">
+      2018-11-19 <text class="sq-icon sq-icon-alert-full time-icon"></text>
+    </view>
+  </view>
+  <view class="coverage-row">
+    <view><text class="coverage-name">车辆损失险</text></view>
+    <view class="coverage-amount">
+      <van-checkbox value="{{ checked }}" bind:change="onChange">不计免赔</van-checkbox>
+      <text class="coverage-value disabled">不投<text class="sq-icon sq-icon-arrow-down coverage-arrow"></text></text>
+    </view>
+  </view>
+  <view class="coverage-row">
+    <view><text class="coverage-name">车辆损失险</text></view>
+    <view class="coverage-amount">
+      <van-checkbox value="{{ checked }}" bind:change="onChange">不计免赔</van-checkbox>
+      <text class="coverage-value">投保<text class="sq-icon sq-icon-arrow-down coverage-arrow"></text></text>
+    </view>
+  </view>
+</view>
+
+<view class="insure-type-title">
+  <view>交强险</view>
+  <view class="switch-wrap">
+    <van-switch
+      custom-class="diy-switch"
+      checked="{{ checked2 }}"
+      bind:change="onChange2"
+      size="18px"
+      active-color="#4e76c6"
+    />
+  </view>
+</view>
+
+<view class="coverage-list pdb-0">
+  <view class="coverage-row ">
+    <view><text class="coverage-name">交强险起期</text></view>
+    <view class="coverage-amount right">
+      2018-11-19 <text class="sq-icon sq-icon-alert-full time-icon"></text>
+    </view>
+  </view>
+</view>
+
+<view class="submit-btn-wrap">
+  <button class="submit-btn" plain>提交报价</button>
+</view>

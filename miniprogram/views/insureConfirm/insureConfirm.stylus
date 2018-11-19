@@ -1,0 +1,19 @@
+@import '../../assets/style/common/var'
+page
+  background-color #f6f6f6
+.title
+  font-size 30rpx
+  padding 20rpx 0 20rpx 60rpx
+  background-color #fff
+.part-wrap
+  margin-top 20rpx
+.submit-btn
+  background-color $themeColor!important
+  color #fff!important
+  border 0!important
+  &.disabled
+    background-color rgb(221, 221, 221)
+    border 0
+    color #fff
+  &-wrap
+    padding 40rpx

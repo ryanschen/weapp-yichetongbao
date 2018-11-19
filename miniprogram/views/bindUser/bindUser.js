@@ -1,11 +1,8 @@
-// miniprogram/pages/index.js
+import CreatePage from '../../utils/createPage'
+
 const app = getApp()
 
-Page({
-
-  /**
-   * 页面的初始数据
-   */
+CreatePage({
   data: {
     userName: undefined,
     password: undefined,
@@ -13,78 +10,80 @@ Page({
     isPasswordInputFocus: false
   },
 
-  inputFocusHandle(e) {
-    this.setData(
-      e.currentTarget.dataset.type === 'userName'
-        ? { isUserNameInputFocus: true }
-        : { isPasswordInputFocus: true }
-    )
-  },
-
-  inputBlurHandle(e) {
-    this.setData(
-      e.currentTarget.dataset.type === 'userName'
-        ? { isUserNameInputFocus: false }
-        : { isPasswordInputFocus: false }
-    )
-  },
-
-  bindKeyInput(e) {
-    this.setData(
-      e.currentTarget.dataset.type === 'userName'
-        ? { userName: e.detail.value }
-        : { password: e.detail.value }
-    )
-  },
-
-  getCode() {
-    if (this.data.time !== 60) return
-
-    wx.showLoading({ title: '加载中...' })
-    app.post('/v2/entry/sendCapcode',
-      {
-        mobile: this.data.mobile,
-        appCode: 'APP04'
-      }
-      // {
-      //   "appCode": "APP04",
-      //   "deviceId": "string",
-      //   "deviceSystem": "android",
-      //   "mobile": "string",
-      //   "otpCode": "string",
-      //   "password": "string",
-      //   "sessionId": "string",
-      //   "silence": "string",
-      //   "systemCode": "string",
-      //   "userCode": "string",
-      //   "userIp": "string"
-      // }
-    )
-      .then(response => {
-        console.log(response)
-        wx.hideLoading()
-      })
-      .catch(error => {
-        console.log(error)
-        wx.hideLoading()
-      })
-  },
-
-  timeInterval() {
-    this._setInterval = setInterval(() => {
-      if (this.data.time - 1 > 0) {
-        this.setData({
-          codeText: `${this.data.time - 1}s`,
-          time: this.data.time - 1
+  methods: {
+    inputFocusHandle(e) {
+      this.setData(
+        e.currentTarget.dataset.type === 'userName'
+          ? { isUserNameInputFocus: true }
+          : { isPasswordInputFocus: true }
+      )
+    },
+  
+    inputBlurHandle(e) {
+      this.setData(
+        e.currentTarget.dataset.type === 'userName'
+          ? { isUserNameInputFocus: false }
+          : { isPasswordInputFocus: false }
+      )
+    },
+  
+    bindKeyInput(e) {
+      this.setData(
+        e.currentTarget.dataset.type === 'userName'
+          ? { userName: e.detail.value }
+          : { password: e.detail.value }
+      )
+    },
+  
+    getCode() {
+      if (this.data.time !== 60) return
+  
+      wx.showLoading({ title: '加载中...' })
+      app.post('/v2/entry/sendCapcode',
+        {
+          mobile: this.data.mobile,
+          appCode: 'APP04'
+        }
+        // {
+        //   "appCode": "APP04",
+        //   "deviceId": "string",
+        //   "deviceSystem": "android",
+        //   "mobile": "string",
+        //   "otpCode": "string",
+        //   "password": "string",
+        //   "sessionId": "string",
+        //   "silence": "string",
+        //   "systemCode": "string",
+        //   "userCode": "string",
+        //   "userIp": "string"
+        // }
+      )
+        .then(response => {
+          console.log(response)
+          wx.hideLoading()
         })
-      } else {
-        this.setData({
-          codeText: `获取短信验证码`,
-          time: 60
+        .catch(error => {
+          console.log(error)
+          wx.hideLoading()
         })
-        clearInterval(this._setInterval)
-      }
-    }, 1000)
+    },
+  
+    timeInterval() {
+      this._setInterval = setInterval(() => {
+        if (this.data.time - 1 > 0) {
+          this.setData({
+            codeText: `${this.data.time - 1}s`,
+            time: this.data.time - 1
+          })
+        } else {
+          this.setData({
+            codeText: `获取短信验证码`,
+            time: 60
+          })
+          clearInterval(this._setInterval)
+        }
+      }, 1000)
+    }
   },
 
   /**

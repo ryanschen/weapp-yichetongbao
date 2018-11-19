@@ -1,0 +1,21 @@
+<wxs module="filter" src="../../utils/filter.wxs"></wxs>
+
+<view class="title van-hairline--top">车主信息</view>
+<view class="van-hairline--top">
+  <van-field label="车主姓名" value="{{name}}" readonly/>
+  <van-field label="身份证" type="idcard" value="355627199208072435"readonly/>
+  <van-field label="手机号" value="132 8988 3244" readonly/>
+</view>
+
+<view class="part-wrap title van-hairline--top">车辆信息</view>
+<view class="car-info-wrap van-hairline--top">
+  <van-field label="车牌号" value="浙C88873" readonly/>
+  <van-field label="品牌型号" value="别克GSM7205ATA" readonly/>
+  <van-field label="车架号" value="SDFSDFSFSFSF" readonly/>
+  <van-field label="发动机号" value="H338840" readonly/>
+  <van-field label="注册日期" value="2018-11-19" readonly value="{{ filter.formatDate(date1) }}" />
+</view>
+
+<view class="submit-btn-wrap">
+  <button plain class="submit-btn" bindtap="submitHandle">我要投保</button>
+</view>

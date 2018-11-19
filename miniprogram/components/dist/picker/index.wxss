@@ -1,0 +1,33 @@
+.sq-picker{
+  font-size:14px;
+}
+.sq-picker-title-wrap{
+  display:flex;
+  text-align:center;
+  position:relative;
+  font-size:14px;
+  line-height:44px;
+  height:44px;
+}
+.sq-picker-title-wrap:after{
+  content:" ";
+  position:absolute;
+  pointer-events:none;
+  box-sizing:border-box;
+  transform-origin:center;
+  top:-50%;
+  left:-50%;
+  right:-50%;
+  bottom:-50%;
+  transform:scale(.5);
+  border-color:#eee;
+  border-style:solid;
+  border-width:1px 0;
+}
+.sq-picker-title-text{
+  flex:1;
+}
+.sq-picker-cancel-btn,.sq-picker-confirm-btn{
+  color:#4e76c6;
+  padding:0 15px;
+}

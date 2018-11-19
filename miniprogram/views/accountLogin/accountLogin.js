@@ -1,45 +1,45 @@
-// miniprogram/pages/accountLogin/accountLogin.js
+import CreatePage from '../../utils/createPage'
+
 const app = getApp()
 
-Page({
-
-  /**
-   * 页面的初始数据
-   */
+CreatePage({
   data: {
     userName: '',
     password: ''
   },
 
-  loginHandle () {
-    app.post('/v2/entry/login', {
-        'appCode': 'APP04',
-        'capCodeFlag': '0',
-        'deviceId': 'BK20006',
-        'mobile': this.data.userName,
-        'password': this.data.password,
-        'userCode': 'BK20006'
-    })
-      .then(response => {
-        console.log(response)
-        if (response.errCode === 'A0000000') {
-          wx.navigateTo({
-            url: '../home/home'
-          })
-        }
+  methods: {
+    loginHandle () {
+      app.post('/v2/entry/login', {
+          'appCode': 'APP04',
+          'capCodeFlag': '0',
+          'deviceId': 'BK20006',
+          'mobile': this.data.userName,
+          'password': this.data.password,
+          'userCode': 'BK20006'
       })
-      .catch(error => {
-        console.log(error)
-      })
+        .then(response => {
+          console.log(response)
+          if (response.errCode === 'A0000000') {
+            wx.navigateTo({
+              url: '../home/home'
+            })
+          }
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+  
+    bindKeyInput (e) {
+      this.setData(
+        e.currentTarget.dataset.type === 'userName'
+          ? { userName: e.detail.value }
+          : { password: e.detail.value }
+      )
+    }
   },
 
-  bindKeyInput (e) {
-    this.setData(
-      e.currentTarget.dataset.type === 'userName'
-        ? { userName: e.detail.value }
-        : { password: e.detail.value }
-    )
-  },
 
   /**
    * 生命周期函数--监听页面加载

@@ -1,34 +1,33 @@
-// miniprogram/src/home/home.js
-Page({
-  /**
-   * 页面的初始数据
-   */
+import CreatePage from '../../utils/createPage';
+CreatePage({
   data: {
     active: 0,
     carNum: '',
     isSuccessTipChecked: true
   },
+  methods: {
+    onChange(event) {// wx.showToast({
+      //   title: `切换到标签 ${event.detail.index + 1}`,
+      //   icon: 'none'
+      // });
+    },
 
-  onChange(event) {// wx.showToast({
-    //   title: `切换到标签 ${event.detail.index + 1}`,
-    //   icon: 'none'
-    // });
-  },
+    onCarNumChange(event) {
+      // event.detail 为当前输入的值
+      console.log(event.detail);
+    },
 
-  onCarNumChange(event) {
-    // event.detail 为当前输入的值
-    console.log(event.detail);
-  },
+    onSuccessTipChange(event) {
+      console.log(event.detail);
+      this.setData({
+        isSuccessTipChecked: event.detail
+      });
+    },
 
-  onSuccessTipChange(event) {
-    console.log(event.detail);
-    this.setData({
-      isSuccessTipChecked: event.detail
-    });
-  },
+    submitHandle() {
+      console.log('submit');
+    }
 
-  submitHandle() {
-    console.log('submit');
   },
 
   /**
