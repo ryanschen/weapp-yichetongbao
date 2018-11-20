@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -50,10 +50,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "selectPolicy",
 					"pathName": "pages/selectPolicy/selectPolicy",
-					"query": ""
+					"query": "vin=LSDFV1234567HNM89"
 				},
 				{
 					"id": -1,
@@ -88,7 +88,20 @@
 				{
 					"id": -1,
 					"name": "planEdit",
-					"pathName": "pages/planEdit/planEdit"
+					"pathName": "pages/planEdit/planEdit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bindUser",
+					"pathName": "pages/bindUser/bindUser",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "selectPolicy",
+					"pathName": "pages/selectPolicy/selectPolicy",
+					"query": "vin=LSDC12345GBHNJU76"
 				}
 			]
 		}

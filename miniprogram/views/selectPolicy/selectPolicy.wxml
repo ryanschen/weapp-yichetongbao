@@ -1,27 +1,12 @@
-<view class="row van-hairline--top">
+<wxs module="filter" src="../../utils/filter.wxs"></wxs>
+
+<view class="row {{index === 0 ? 'van-hairline--top' : ''}}" wx:for="{{insureList}}" wx:key="{{index}}">
   <view class="logo-wrap">
-    <image class="logo" src="../../assets/images/logo.jpg"></image>
+    <image class="logo" src="{{item.imgsrc}}" mode="scaleToFill"></image>
   </view>
   <view class="content-wrap van-hairline--bottom">
-    <view>人保财险<text class="tip">去年投保</text></view>
-    <button size="mini" class="btn">报价</button>
-  </view>
-</view>
-<view class="row">
-  <view class="logo-wrap">
-    <image class="logo" src="../../assets/images/logo.jpg"></image>
-  </view>
-  <view class="content-wrap van-hairline--bottom">
-    <view>人保财险<text class="tip">去年投保</text></view>
-    <view class="amount">¥5320.00</view>
-  </view>
-</view>
-<view class="row">
-  <view class="logo-wrap">
-    <image class="logo" src="../../assets/images/logo.jpg"></image>
-  </view>
-  <view class="content-wrap van-hairline--bottom">
-    <view>人保财险<text class="tip">去年投保</text></view>
-    <button size="mini" class="btn">报价</button>
+    <view>{{filter.config(item.insurer, 'insuranceCompany')}}<text class="tip" wx:if="{{item.lastInsurer}}">去年投保</text></view>
+    <button size="mini" class="btn" wx:if="{{!item.premium}}" data-insurer="{{item.insurer}}" bind:tap="sendQuote">报价</button>
+    <view class="amount" wx:if="{{item.premium}}" data-insurer="{{item.insurer}}">¥{{item.premium}}</view>
   </view>
 </view>

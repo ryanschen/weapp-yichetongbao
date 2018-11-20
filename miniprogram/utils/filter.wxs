@@ -10,7 +10,28 @@ function formatDate(datetime) {
   var date = getDate(datetime)
   return date.getFullYear() + '-' + zoo(date.getMonth() + 1) + '-' + zoo(date.getDate())
 }
-
+function config(val, key) {
+  var cfg = {
+    insuranceCompany: {
+      'picc': '人保财险',
+      'cpic': '太保财险',
+      'gpic': '人寿财险',
+      'paic': '平安财险',
+      'cicp': '中华联合财险',
+      'ccic': '大地财险',
+      'taic': '天安保险',
+      'yaic': '永安财产保险',
+      'ygbx': '阳光财产保险',
+      'abic': '安邦财产保险',
+      'tpic': '中国太平保险',
+      'zkic': '紫金财产保险',
+      'htic': '华泰财产保险',
+      'other': '其他保险公司'
+    }
+  }
+  return cfg[key][val]
+}
 module.exports = {
-  formatDate: formatDate
+  formatDate: formatDate,
+  config: config
 }

@@ -4,25 +4,26 @@ const app = getApp()
 
 CreatePage({
   data: {
-    userName: '',
-    password: ''
+    userName: 'VW012300',
+    password: 'Pass1234'
   },
 
   methods: {
     loginHandle () {
       app.post('/v2/entry/login', {
-          'appCode': 'APP04',
-          'capCodeFlag': '0',
-          'deviceId': 'BK20006',
-          'mobile': this.data.userName,
-          'password': this.data.password,
-          'userCode': 'BK20006'
-      })
+        appCode: 'APP04',
+        capCodeFlag: '0',
+        deviceId: 'BK20006',
+        mobile: this.data.userName,
+        password: this.data.password,
+        userCode: 'BK20006'
+      }, true)
         .then(response => {
           console.log(response)
           if (response.errCode === 'A0000000') {
-            wx.navigateTo({
-              url: '../home/home'
+            wx.setStorageSync('FF_loginInfo', JSON.stringify(response.responseBody))
+            wx.switchTab({
+              url: '../../pages/home/home'
             })
           }
         })
@@ -33,7 +34,7 @@ CreatePage({
   
     bindKeyInput (e) {
       this.setData(
-        e.currentTarget.dataset.type === 'userName'
+        e.target.dataset.type === 'userName'
           ? { userName: e.detail.value }
           : { password: e.detail.value }
       )

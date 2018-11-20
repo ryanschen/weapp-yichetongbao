@@ -1,4 +1,5 @@
 import CreatePage from '../../utils/createPage';
+const app = getApp();
 CreatePage({
   data: {
     active: 0,
@@ -12,11 +13,6 @@ CreatePage({
       // });
     },
 
-    onCarNumChange(event) {
-      // event.detail 为当前输入的值
-      console.log(event.detail);
-    },
-
     onSuccessTipChange(event) {
       console.log(event.detail);
       this.setData({
@@ -24,8 +20,12 @@ CreatePage({
       });
     },
 
-    submitHandle() {
-      console.log('submit');
+    submitHandle(e) {
+      const type = e.target.dataset.type;
+      console.log('submit:', type);
+      wx.navigateTo({
+        url: `../../pages/selectPolicy/selectPolicy?${type}=${this.data[type]}`
+      });
     }
 
   },

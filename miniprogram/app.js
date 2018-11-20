@@ -22,14 +22,19 @@ App({
 
     this.globalData = {}
   },
-  post: (path, params) => {
+  post: (path, params, isCacheCookiePost, method) => {
     return new Promise((resolve, reject) => {
       wx.showLoading({ title: '加载中...' })
       wx.request({
         url: `${URL}${path}`,
         data: Object.assign({}, params),
-        method: 'POST',
-        header: { 'Content-Type': 'application/json;charset=UTF-8' },
+        method: 'POST' || method,
+        header: {
+          'Content-Type': 'application/json;charset=UTF-8',
+          ...(!isCacheCookiePost ? {
+            'cookie': wx.getStorageSync('FF_sessionid')
+          } : {})
+        },
         success (res) {
           if (res.data.errMsg !== 'OK') {
             wx.showToast({
@@ -39,6 +44,12 @@ App({
             })
             return
           }
+
+          const cookie = res.header['Set-Cookie']
+          if (isCacheCookiePost && cookie) {
+            wx.setStorageSync('FF_sessionid', res.header['Set-Cookie'])
+          }
+
           resolve(res.data)
         },
         fail: reject,
@@ -49,29 +60,6 @@ App({
     })
   },
   get: (path, params) => {
-    return new Promise((resolve, reject) => {
-      wx.showLoading({ title: '加载中...' })
-      wx.request({
-        url: `${URL}${path}`,
-        data: Object.assign({}, params),
-        method: 'GET',
-        header: { 'Content-Type': 'application/json;charset=UTF-8' },
-        success (res) {
-          if (res.data.errMsg !== 'OK') {
-            wx.showToast({
-              title: res.data.errMsg,
-              duration: 2000,
-              icon: 'none'
-            })
-            return
-          }
-          resolve(res.data)
-        },
-        fail: reject,
-        complete () {
-          wx.hideLoading()
-        }
-      })
-    })
+    this.post(path, params, isCacheCookiePost, 'GET')
   }
 })

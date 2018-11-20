@@ -11,35 +11,29 @@
 
 <view class="middle-wrap">
   <view class="middle">
-    <view class="top van-hairline--bottom">
+    <view class="top">
       <text>快捷报价</text>
       <text class="quote-list-btn">报价记录</text>
     </view>
     <view>
-      <van-tabs
-        active="{{ active }}"
-        bind:change="onChange"
-        color="#4e76c6"
-        line-width="24"
-      >
+      <van-tabs active="{{ active }}" bind:change="onChange" color="#4e76c6" line-width="24">
+
         <van-tab title="车牌号">
-          <van-field
-            label="车牌号"
-            value="{{ carNum }}"
-            placeholder="请输入车牌号"
-            border="{{ false }}"
-            bind:change="onCarNumChange"
-          />
+          <van-field label="车牌号" value="{{ carNum }}" placeholder="请输入车牌号" border="{{ false }}" bind:input="fieldInput" data-key="carNum" />
           <view class="van-hairline--top submit-btn-wrap">
-            <button size="mini" class="submit-btn" bindtap="submitHandle">提交报价</button>
-            <van-checkbox
-              value="{{ isSuccessTipChecked }}"
-              bind:change="onSuccessTipChange"
-              class="success-tip-checked-wrap"
-            >报价成功提醒</van-checkbox>
+            <button size="mini" class="submit-btn" data-type="carNum" bindtap="submitHandle">提交报价</button>
+            <van-checkbox value="{{ isSuccessTipChecked }}" bind:change="onSuccessTipChange" class="success-tip-checked-wrap">报价成功提醒</van-checkbox>
           </view>
         </van-tab>
-        <van-tab title="车架号">内容 2</van-tab>
+
+        <van-tab title="车架号">
+          <van-field label="车架号" value="{{ vin }}" placeholder="请输入车架号" border="{{ false }}" bind:change="onCarNumChange" />
+          <view class="van-hairline--top submit-btn-wrap">
+            <button size="mini" class="submit-btn" data-type="vin" bindtap="submitHandle">提交报价</button>
+            <van-checkbox value="{{ isSuccessTipChecked }}" bind:change="onSuccessTipChange" class="success-tip-checked-wrap">报价成功提醒</van-checkbox>
+          </view>
+        </van-tab>
+
       </van-tabs>
     </view>
   </view>

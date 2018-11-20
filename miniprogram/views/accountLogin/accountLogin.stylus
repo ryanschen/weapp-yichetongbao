@@ -1,6 +1,7 @@
 page
   padding 40rpx
   box-sizing border-box
+  background-color #fff
 .row
   margin-bottom 40rpx
   border-bottom 1rpx solid #ccc
