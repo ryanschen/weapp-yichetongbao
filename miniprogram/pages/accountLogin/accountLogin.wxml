@@ -14,4 +14,4 @@
     value="{{password}}"
   />
 </view>
-<button class="login-btn" bindtap="loginHandle">登录</button>
+<button class="login-btn" bindtap="login">登录</button>

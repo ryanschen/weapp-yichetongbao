@@ -28,7 +28,7 @@ page
         margin-left 40rpx
 .title
   font-size 28rpx
-  padding 20rpx 0 20rpx 60rpx
+  padding 20rpx 0 20rpx 15px
   background-color #fff
   &-tip
     font-size 24rpx
@@ -126,3 +126,4 @@ page
     border-radius 50%
     text-align center
     line-height 50rpx
+    color #b1b1b1

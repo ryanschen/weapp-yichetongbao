@@ -21,6 +21,12 @@ CreatePage({
       this.setData({
         checked2: detail
       });
+    },
+
+    submitHandle() {
+      wx.navigateTo({
+        url: '../../pages/insureConfirm/insureConfirm'
+      });
     }
 
   },

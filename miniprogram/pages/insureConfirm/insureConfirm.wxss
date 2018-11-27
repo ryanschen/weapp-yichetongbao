@@ -3,7 +3,7 @@ page{
 }
 .title{
   font-size:30rpx;
-  padding:20rpx 0 20rpx 60rpx;
+  padding:20rpx 0 20rpx 15px;
   background-color:#fff;
 }
 .part-wrap{

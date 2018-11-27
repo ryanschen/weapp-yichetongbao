@@ -36,6 +36,7 @@ App({
           } : {})
         },
         success (res) {
+          wx.hideLoading()
           if (res.data.errMsg !== 'OK') {
             wx.showToast({
               title: res.data.errMsg,
@@ -52,10 +53,13 @@ App({
 
           resolve(res.data)
         },
-        fail: reject,
-        complete() {
+        fail (error) {
           wx.hideLoading()
+          reject(error)
         }
+        // complete() {
+        //   wx.hideLoading()
+        // }
       })
     })
   },

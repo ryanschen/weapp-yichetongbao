@@ -4,52 +4,54 @@
       <image src="../../assets/images/logo.jpg" class="logo"></image>
       <text class="text">人保财险</text>
     </view>
-    <view class="amount">¥3805.26</view>
+    <view class="amount" hidden="{{!quoteState}}">¥3805.26</view>
   </view>
   
-  <view class="insure-type-title">
-    <view>商业险<text class="zhe zhe-tag">折</text><text class="zhe zhe-num">0.744</text></view>
-    <view>¥2025.34<text class="arrow sq-icon sq-icon-arrow-down"></text></view>
-  </view>
-  <view class="coverage-list">
-    <view class="coverage-row">
-      <view><text class="coverage-name">车损险（20万）</text><text class="exemptclaus-tag">不计免赔</text></view>
-      <view class="coverage-amount">¥1342.20</view>
+  <view class="mgb-28">
+    <view class="insure-type-title">
+      <view>商业险<text class="zhe zhe-tag"  hidden="{{!quoteState}}">折</text><text class="zhe zhe-num"  hidden="{{!quoteState}}">0.744</text></view>
+      <view bind:tap="toggleCoverageView"  hidden="{{!quoteState}}">¥2025.34<text class="arrow sq-icon sq-icon-arrow-down"></text></view>
     </view>
-    <view class="coverage-row">
-      <view><text class="coverage-name">三责险（200万）</text><text class="exemptclaus-tag">不计免赔</text></view>
-      <view class="coverage-amount">¥1342.20</view>
-    </view>
-    <view class="coverage-row">
-      <view><text class="coverage-name">司机座位险（1万）</text></view>
-      <view class="coverage-amount">¥1342.20</view>
-    </view>
-    <view class="coverage-row">
-      <view><text class="coverage-name">盗抢险</text></view>
-      <view class="coverage-amount">¥1342.20</view>
-    </view>
-    
-    <view class="coefficient">
-      <view class="coefficient-row">无赔优系数：0.744</view>
-      <view class="coefficient-row">无赔优系数：0.744</view>
-      <view class="coefficient-row">无赔优系数：0.744</view>
-      <view class="coefficient-row">无赔优系数：0.744</view>
+    <view class="coverage-list" hidden="{{!isCoverageView || !quoteState}}">
+      <view class="coverage-row">
+        <view><text class="coverage-name">车损险（20万）</text><text class="exemptclaus-tag">不计免赔</text></view>
+        <view class="coverage-amount">¥1342.20</view>
+      </view>
+      <view class="coverage-row">
+        <view><text class="coverage-name">三责险（200万）</text><text class="exemptclaus-tag">不计免赔</text></view>
+        <view class="coverage-amount">¥1342.20</view>
+      </view>
+      <view class="coverage-row">
+        <view><text class="coverage-name">司机座位险（1万）</text></view>
+        <view class="coverage-amount">¥1342.20</view>
+      </view>
+      <view class="coverage-row">
+        <view><text class="coverage-name">盗抢险</text></view>
+        <view class="coverage-amount">¥1342.20</view>
+      </view>
+      
+      <view class="coefficient">
+        <view class="coefficient-row">无赔优系数：0.744</view>
+        <view class="coefficient-row">无赔优系数：0.744</view>
+        <view class="coefficient-row">无赔优系数：0.744</view>
+        <view class="coefficient-row">无赔优系数：0.744</view>
+      </view>
     </view>
   </view>
   <view class="insure-type-title mgb-28">
-    <view>交强险<text class="zhe zhe-tag">折</text><text class="zhe zhe-num">0.744</text></view>
-    <view>¥2025.34</view>
+    <view>交强险<text class="zhe zhe-tag"  hidden="{{!quoteState}}">折</text><text class="zhe zhe-num"  hidden="{{!quoteState}}">0.744</text></view>
+    <view hidden="{{!quoteState}}">¥2025.34</view>
   </view>
   <view class="insure-type-title mgb-28">
     <view>车船税</view>
-    <view>¥890.00</view>
+    <view hidden="{{!quoteState}}">¥890.00</view>
   </view>
   <view class="insure-type-title">
     <view>起保日期</view>
     <view></view>
   </view>
   
-  <view class="time-list">
+  <view class="time-list" hidden="{{!quoteState}}">
     <view class="time-row dashed">
       <view><text class="time-name">商业险起期</text></view>
       <view class="time-text">2018-11-19 0时</view>
@@ -59,12 +61,25 @@
       <view class="time-text">2018-11-19 0时</view>
     </view>
   </view>
-  <view class="edit-btn">调整投保方案</view>
+  <view class="edit-btn" hidden="{{!quoteState}}">调整投保方案</view>
 </view>
-<view class="next-btn-wrap">
+
+<view class="next-btn-wrap" hidden="{{!quoteState}}">
   <view class="send-msg">
     <text class="sq-icon sq-icon-alert icon"></text>
     <text class="text">发送报价短信</text>
   </view>
   <button class="next-btn">下一步</button>
 </view>
+
+<van-dialog
+  use-slot
+  async-close
+  title="报价失败"
+  confirm-button-text="去完善"
+  show="{{ isShowDialog }}"
+  show-cancel-button
+  bind:confirm="onDialogConfirm"
+  bind:cancel="onDialogCancel">
+  <view class="quote-file-text">请完善车辆信息后再提交报价</view>
+</van-dialog>

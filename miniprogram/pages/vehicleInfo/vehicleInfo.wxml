@@ -9,7 +9,7 @@
   </picker>
 </view>
 
-<view class="part-wrap title van-hairline--top">车辆信息</view>
+<view class="part-wrap title van-hairline--top"><text class="sq-icon sq-icon-xiaoche page-icon"></text>车辆信息</view>
 <view class="car-info-wrap van-hairline--top">
   <van-field label="交强险起期" readonly value="2018-11-16" />
   <van-field label="商业险起期" readonly value="2018-11-1" />
@@ -18,10 +18,10 @@
   <van-field label="车主姓名" readonly value="王文文"/>
 </view>
 
-<view class="part-wrap title">报价历史<text class="title-tip">(仅显示当日报价记录)</text></view>
+<view class="part-wrap title"><text class="sq-icon sq-icon-baojia page-icon"></text>报价历史<text class="title-tip">(仅显示当日报价记录)</text></view>
 <view class="quote-list-wrap van-hairline--top">
   <view>
-    <view class="loadmore">↓</view>
+    <view class="loadmore"><text class="sq-icon sq-icon-arrow-double-down"></text></view>
     <view class="row van-hairline--bottom">
       <view class="logo-wrap">
         <image class="logo" src="../../assets/images/logo.jpg"></image>

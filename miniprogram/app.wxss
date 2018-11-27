@@ -11,3 +11,7 @@ Page {
   font-size: 28rpx;
   background-color: rgb(245, 245, 245);
 }
+.page-icon {
+  margin-right: 4px;
+  font-size: 18px;
+}

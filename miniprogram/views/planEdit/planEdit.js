@@ -15,6 +15,11 @@ CreatePage({
     onChange2({ detail }) {
       // 需要手动对 checked 状态进行更新
       this.setData({ checked2: detail });
+    },
+    submitHandle () {
+      wx.navigateTo({
+        url: '../../pages/insureConfirm/insureConfirm'
+      })
     }
   },
 

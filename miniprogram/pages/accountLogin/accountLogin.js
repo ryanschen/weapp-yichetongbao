@@ -6,6 +6,12 @@ CreatePage({
     password: 'Pass1234'
   },
   methods: {
+    login() {
+      wx.switchTab({
+        url: '../../pages/home/home'
+      });
+    },
+
     loginHandle() {
       app.post('/v2/entry/login', {
         appCode: 'APP04',

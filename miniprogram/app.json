@@ -1,9 +1,9 @@
 {
   "cloud": true,
   "pages": [
-    "pages/index/index",
-    "pages/bindUser/bindUser",
     "pages/accountLogin/accountLogin",
+    "pages/bindUser/bindUser",
+    "pages/index/index",
     "pages/home/home",
     "pages/my/my",
     "pages/selectPolicy/selectPolicy",
@@ -26,7 +26,8 @@
     "van-popup": "./vant/popup/index",
     "van-cell": "./vant/cell/index",
     "van-cell-group": "./vant/cell-group/index",
-    "van-switch": "./vant/switch/index"
+    "van-switch": "./vant/switch/index",
+    "van-dialog": "./vant/dialog/index"
   },
   "window": {
     "backgroundColor": "#FFF",

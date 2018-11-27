@@ -23,7 +23,7 @@
   <view class="coverage-row">
     <view><text class="coverage-name">商业险起期</text></view>
     <view class="coverage-amount right">
-      2018-11-19 <text class="sq-icon sq-icon-alert-full time-icon"></text>
+      2018-11-19 <text class="sq-icon sq-icon-rili time-icon"></text>
     </view>
   </view>
   <view class="coverage-row">
@@ -33,7 +33,7 @@
       <text class="coverage-value disabled">不投<text class="sq-icon sq-icon-arrow-down coverage-arrow"></text></text>
     </view>
   </view>
-  <view class="coverage-row">
+  <view class="coverage-row" wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="index">
     <view><text class="coverage-name">车辆损失险</text></view>
     <view class="coverage-amount">
       <van-checkbox value="{{ checked }}" bind:change="onChange">不计免赔</van-checkbox>
@@ -59,11 +59,11 @@
   <view class="coverage-row ">
     <view><text class="coverage-name">交强险起期</text></view>
     <view class="coverage-amount right">
-      2018-11-19 <text class="sq-icon sq-icon-alert-full time-icon"></text>
+      2018-11-19 <text class="sq-icon sq-icon-rili time-icon"></text>
     </view>
   </view>
 </view>
 
 <view class="submit-btn-wrap">
-  <button class="submit-btn" plain>提交报价</button>
+  <button class="submit-btn" plain bind:tap="submitHandle">提交报价</button>
 </view>

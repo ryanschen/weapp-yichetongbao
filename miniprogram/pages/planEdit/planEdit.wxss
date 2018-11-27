@@ -1,5 +1,5 @@
 Page{
-  padding-bottom:100px;
+  padding-bottom:20px;
 }
 .title-wrap{
   display:flex;
@@ -112,7 +112,6 @@ Page{
 }
 .submit-btn-wrap{
   padding:40rpx;
-  position:fixed;
   bottom:0;
   left:0;
   width:100%;

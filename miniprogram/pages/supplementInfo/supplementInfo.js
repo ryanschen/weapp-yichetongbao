@@ -39,10 +39,12 @@ CreatePage({
     },
 
     submitHandle() {
-      this.setData({
-        minDate: new Date(2019, 3, 1).getTime(),
-        date1: new Date(2019, 3, 2).getTime()
-      });
+      wx.navigateTo({
+        url: '../../pages/vehicleInfo/vehicleInfo'
+      }); // this.setData({
+      //   minDate: new Date(2019, 3, 1).getTime(),
+      //   date1: new Date(2019, 3, 2).getTime()
+      // })
     }
 
   }
