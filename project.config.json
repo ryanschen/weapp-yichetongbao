@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 13,
 			"list": [
 				{
 					"id": -1,
@@ -102,6 +102,18 @@
 					"name": "selectPolicy",
 					"pathName": "pages/selectPolicy/selectPolicy",
 					"query": "vin=LSDC12345GBHNJU76"
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "vin=LSDFV1234567HNM89"
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
 				}
 			]
 		}

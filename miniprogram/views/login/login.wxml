@@ -1,0 +1,34 @@
+<view class="title">手机号登录</view>
+<view class="row mobile {{isMobileInputFocus ? 'focus': ''}} {{mobile ? 'has-mobile-value-wrap': ''}}">
+  <text class="label" hidden="{{!mobile}}">手机号</text>
+  <input
+    class="input {{mobile ? 'has-mobile-value': ''}}"
+    type="number"
+    placeholder="请输入手机号"
+    maxlength="11"
+    data-type="mobile"
+    bindfocus="inputFocusHandle"
+    bindblur="inputBlurHandle"
+    bindinput="bindKeyInput"
+  />
+</view>
+<view class="row code {{isCodeInputFocus ? 'focus': ''}} {{code ? 'has-code-value-wrap': ''}}">
+  <text class="label" hidden="{{!code}}">验证码</text>
+  <input
+    class="input {{code ? 'has-code-value': ''}}"
+    type="number"
+    placeholder="请输入验证码"
+    maxlength="6"
+    data-type="code"
+    bindfocus="inputFocusHandle"
+    bindblur="inputBlurHandle"
+    bindinput="bindKeyInput"
+  />
+  <button
+    size="mini"
+    plain="{{true}}"
+    class="code-input"
+    bindtap="getCode"
+  >{{codeText}}</button>
+</view>
+<button class="login-btn" bindtap="loginHandle">登录</button>

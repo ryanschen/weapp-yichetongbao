@@ -1,0 +1,54 @@
+page{
+  padding:40rpx;
+  box-sizing:border-box;
+  background-color:#fff;
+}
+.title{
+  font-size:32rpx;
+  margin-bottom:40rpx;
+}
+.row{
+  margin-bottom:20rpx;
+  font-size:14px;
+  position:relative;
+  border-bottom:1rpx solid #ccc;
+}
+.row.focus{
+  border-bottom-color:#4e76c6;
+}
+.row.has-code-value-wrap,.row.has-mobile-value-wrap{
+  padding-top:20rpx;
+}
+.row .label{
+  color:#4e76c6;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.row.code{
+  margin-bottom:60rpx;
+  position:relative;
+  padding-right:126px;
+}
+.row .input{
+  padding:50rpx 0 30rpx;
+}
+.row .input.has-code-value,.row .input.has-mobile-value{
+  padding:50rpx 0 10rpx;
+}
+.row .code-input{
+  position:absolute;
+  right:0;
+  bottom:0;
+  border:0;
+  color:#4e76c6;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  width:126px;
+}
+.login-btn{
+  color:#fff;
+  background-color:#4e76c6;
+}

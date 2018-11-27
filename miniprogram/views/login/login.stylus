@@ -1,6 +1,7 @@
 page
   padding 40rpx
   box-sizing border-box
+  background-color #fff
 
 .title
   font-size 32rpx

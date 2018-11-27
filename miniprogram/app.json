@@ -3,7 +3,7 @@
   "pages": [
     "pages/accountLogin/accountLogin",
     "pages/bindUser/bindUser",
-    "pages/index/index",
+    "pages/login/login",
     "pages/home/home",
     "pages/my/my",
     "pages/selectPolicy/selectPolicy",

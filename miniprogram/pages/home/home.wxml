@@ -13,7 +13,7 @@
   <view class="middle">
     <view class="top">
       <text>快捷报价</text>
-      <text class="quote-list-btn">报价记录</text>
+      <text class="quote-list-btn" bind:tap="goToQuoteListPage">报价记录</text>
     </view>
     <view>
       <van-tabs active="{{ active }}" bind:change="onChange" color="#4e76c6" line-width="24">

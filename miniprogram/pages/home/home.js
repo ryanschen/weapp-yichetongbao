@@ -26,6 +26,12 @@ CreatePage({
       wx.navigateTo({
         url: `../../pages/selectPolicy/selectPolicy?${type}=${this.data[type]}`
       });
+    },
+
+    goToQuoteListPage() {
+      wx.navigateTo({
+        url: '../../pages/quoteList/quoteList'
+      });
     }
 
   },
