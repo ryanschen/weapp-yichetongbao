@@ -72,14 +72,16 @@
   <button class="next-btn">下一步</button>
 </view>
 
-<van-dialog
-  use-slot
-  async-close
-  title="报价失败"
-  confirm-button-text="去完善"
+<van-popup
   show="{{ isShowDialog }}"
-  show-cancel-button
-  bind:confirm="onDialogConfirm"
-  bind:cancel="onDialogCancel">
-  <view class="quote-file-text">请完善车辆信息后再提交报价</view>
-</van-dialog>
+  custom-style="min-width:80%;border-radius:4px;"
+>
+  <view class="quote-file-wrap">
+    <view class="quote-file-title">报价失败</view>
+    <view class="quote-file-text">请完善车辆信息后再提交报价</view>
+    <view class="quote-file-btn">
+      <button class="cancel-btn" plain bind:tap="onDialogCancel">取消</button>
+      <button class="supplement-btn" plain bind:tap="onDialogConfirm">去完善</button>
+    </view>
+  </view>
+</van-popup>

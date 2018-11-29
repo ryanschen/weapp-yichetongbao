@@ -13,7 +13,8 @@ CreatePage({
     date1: nextDate.getTime(),
     isShowDatePicker: false,
     showWitchDatePicker: '',
-    name: '李四'
+    name: '李四',
+    isShowSubmitLoading: false
   },
 
   methods: {
@@ -40,9 +41,18 @@ CreatePage({
 
     submitHandle() {
       this.setData({
-        minDate: new Date(2019, 3, 1).getTime(),
-        date1: new Date(2019, 3, 2).getTime()
+        // minDate: new Date(2019, 3, 1).getTime(),
+        // date1: new Date(2019, 3, 2).getTime()
+        isShowSubmitLoading: true
       })
+      wx.setNavigationBarTitle({
+        title: '订单生成中'
+      })
+      setTimeout(() => {
+        wx.navigateTo({
+          url: '../../pages/pay/pay'
+        })
+      }, 4000)
     }
   }
 })

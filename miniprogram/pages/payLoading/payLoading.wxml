@@ -1,0 +1,7 @@
+<template name="payloading">
+  <view class="order-loading" style="position: fixed;top: 0;bottom: 0;left: 0;right: 0;text-align: center;padding-top: 20px;z-index: 2;">
+    <text class="sq-icon sq-icon-shuaxin shuaxin" style="font-size: 50px;color: #c9c9c9;"></text>
+    <view class="text" style="margin-top: 20px;font-size: 14px;">订单生成中，请勿退出应用</view>
+    <view class="tip" style="margin-top: 10px;color: #cdcdcd;font-size: 12px;">订单努力生成中...</view>
+  </view>
+</template>

@@ -1,0 +1,56 @@
+<view class="order-detail">
+  <view class="top-wrap">
+    <text class="sq-icon sq-icon-checkmark-full state-icon"></text>
+    <view class="text">恭喜您！订单已生成</view>
+    <view class="amount">¥ 3449.00</view>
+  </view>
+  <view class="row">
+    <text>车牌号</text>
+    <text>沪A78900</text>
+  </view>
+  <view class="row">
+    <text>订单编号</text>
+    <text>234234235234235235</text>
+  </view>
+  <view class="select-wrap">
+    <view class="title-wrap">
+      <text class="title">选择支付方式</text>
+    </view>
+    <view>
+      <view class="pay-qrcode-wrap" data-paytype="qrcode" bind:tap="togglePopup">
+        <view class="qrcode-img"></view>
+        <view>二维码</view>
+      </view>
+      <view class="pay-number-wrap" data-paytype="number" bind:tap="togglePopup">
+        <view class="number-img"></view>
+        <view>支付码</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-wrap">
+    <button class="btn" bind:tap="togglePopup">返回</button>
+  </view>
+
+  <van-popup
+    show="{{ isShowPopup }}"
+    custom-style="overflow-y:initial;min-width:90%;"
+  >
+    <view class="popup-wrap">
+      <view class="popup-title">
+        <text hidden="{{!isShowQRCodePopup}}">二维码支付</text>
+        <text hidden="{{isShowQRCodePopup}}">支付码支付</text>
+      </view>
+      <view class="popup-content">
+        <view class="popup-content-amount">¥ 3449.00</view>
+        <view class="popup-content-qrlogo" hidden="{{!isShowQRCodePopup}}"></view>
+        <view class="popup-content-number" hidden="{{isShowQRCodePopup}}">776389908</view>
+        <view class="popup-content-tip">
+          <text hidden="{{!isShowQRCodePopup}}">您也可以通过以下形式发送给客户付款</text>
+          <text hidden="{{isShowQRCodePopup}}">请将支付码输入在付款设备上完成付款</text>
+        </view>
+        <view class="popup-content-select" hidden="{{!isShowQRCodePopup}}"><text>微信</text><text>短信</text></view>
+      </view>
+      <text class="sq-icon sq-icon-error-empty close-icon" bind:tap="togglePopup"></text>
+    </view>
+  </van-popup>
+</view>

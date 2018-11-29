@@ -17,3 +17,23 @@ page
     color #fff
   &-wrap
     padding 40rpx
+.submit-loading
+  position fixed
+  top 0
+  bottom 0
+  left 0
+  right 0
+  text-align center
+  padding-top 20px
+  z-index 10
+  background-color #f6f6f6
+  .shuaxin
+    font-size 50px
+    color #c9c9c9
+  .text
+    margin-top 20px
+    font-size 14px
+  .tip
+    margin-top 10px
+    color #cdcdcd
+    font-size 12px
